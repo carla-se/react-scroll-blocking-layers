@@ -1,0 +1,49 @@
+body {
+  max-width: 800px;
+  padding: 40px
+}
+
+.modal-container {
+  flex: 1 1 auto;
+  display: flex;
+  overflow: hidden;
+  padding: 40px;
+  inset: 0;
+  position: fixed;
+  background-color: rgba(200, 200, 200, 0.4);
+  justify-content: center
+}
+
+.modal {
+  flex: 0 1 auto;
+  height: auto;
+  display: flex;
+  background: white;
+  flex-direction: column;
+  border: 2px solid black;
+  align-self: center;
+  max-height: 100%
+}
+
+.modal-content {  
+  display: flex;
+  overflow: auto;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.modal-actions {
+  position: sticky;
+  display: flex;
+  flex: 0 0 auto;
+  padding: 20px;
+}
+
+.stats {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  background-color: rgba(240, 240, 240, 0.95);
+  z-index: 10
+}

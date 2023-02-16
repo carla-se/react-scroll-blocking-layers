@@ -1,0 +1,8 @@
+node_modules/
+.next
+.vscode
+**/.DS_Store
+
+lib
+es
+coverage

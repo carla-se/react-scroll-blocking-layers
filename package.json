@@ -1,0 +1,59 @@
+{
+  "name": "react-scroll-blocking-layers",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Robin Weser <contact@weser.io>",
+  "homepage": "https://github.com/carla-se/react-scroll-blocking-layers",
+  "repository": "https://github.com/robinweser/react-scroll-blocking-layers.git",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib/**",
+    "es/**"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "workspaces": [
+    ".",
+    "example"
+  ],
+  "scripts": {
+    "clean": "rimraf lib es",
+    "build": "pnpm clean && pnpm build:es && pnpm build:lib",
+    "build:es": "babel src --out-dir es --ignore \"src/__tests__\"",
+    "build:lib": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --ignore \"src/__tests__\"",
+    "dev": "npm run dev:lib & npm run dev:es",
+    "dev:lib": "BABEL_ENV=commonjs babel src -d lib -w",
+    "dev:es": "babel src -d es -w",
+    "release": "pnpm clean && pnpm build && npm publish"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "react-hook",
+    "scroll blocking",
+    "modal",
+    "overlay"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/preset-react": "^7.18.6"
+  },
+  "peerDependencies": {
+    "react": ">16.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "cross-env": "^7.0.3",
+    "react": "^18.2.0",
+    "rimraf": "^4.1.2"
+  }
+}
