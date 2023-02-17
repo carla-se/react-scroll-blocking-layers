@@ -2,11 +2,11 @@
 
 <img alt="npm version" src="https://badge.fury.io/js/react-scroll-blocking-layers.svg"> <img alt="npm downloads" src="https://img.shields.io/npm/dm/react-scroll-blocking-layers.svg"> <a href="https://bundlephobia.com/result?p=react-scroll-blocking-layers@latest"><img alt="Bundlephobia" src="https://img.shields.io/bundlephobia/minzip/react-scroll-blocking-layers.svg"></a>
 
-This packages helps managing UI layers that block body scrolling. It is primarily used for modals and overlays, but can also come in handy with multi-layer layouts.
+This packages helps managing UI layers that block background scrolling. It is primarily used for modals and overlays, but can also come in handy with multi-layer layouts.
 
 It supports nested layers and viewport size boundaries which can be useful for layers that are only visible at a certain screen size.
 
-It works with all major browsers and devices, including iOS.
+It works with all major browsers and devices, including iOS. It's tiny at only 0.3kb minified & gzipped.
 
 ## Background
 
@@ -45,7 +45,7 @@ All the scroll blocking and counting logic is build into a combination of those.
 The context provider accepts no props apart from `children`.
 It is used to keep track of the number of active layers in order to apply scroll blocking correctly for multiple layers.
 
-It needs to wrap your whole application to reliably work.
+It must wrap your whole application to reliably work.
 
 > Tip for Next.js users: You want this component to be part of your `_app.js` ideally.
 
@@ -156,5 +156,5 @@ function Info() {
 
 ## License
 
-Fela is licensed under the [MIT License](http://opensource.org/licenses/MIT).<br />
+react-scroll-blocking-layers is licensed under the [MIT License](http://opensource.org/licenses/MIT).<br />
 Created with ♥ by [engineers at Carla](http://carla.se).
