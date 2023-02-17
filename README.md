@@ -4,9 +4,7 @@
 
 This packages helps managing UI layers that block background scrolling. It is primarily used for modals and overlays, but can also come in handy with multi-layer layouts.
 
-It supports nested layers and viewport size boundaries which can be useful for layers that are only visible at a certain screen size.
-
-It works with all major browsers and devices, including iOS.<br />
+It supports nested layers and viewport size boundaries which can be useful for layers that are only visible at a certain screen size. It works with all major browsers and devices, including iOS.<br />
 It's comparably small at only 1.4kb minified & gzipped.
 
 ## Background
