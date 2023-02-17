@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
 import LayerContext from './LayerContext'
 
-export default function useLayer(defaultVisible = false) {
-  const [visible, setVisible] = useState(defaultVisible)
+export default function useLayer(initialVisible = false) {
+  const [visible, setVisible] = useState(initialVisible)
   const { addLayer, removeLayer } = useContext(LayerContext)
 
   function setLayerVisible(isVisible) {
@@ -18,8 +18,9 @@ export default function useLayer(defaultVisible = false) {
     }
   }
 
+  // layers that are visible by default need to be added to the layer context on initial render
   useEffect(() => {
-    if (defaultVisible) {
+    if (initialVisible) {
       addLayer()
     }
   }, [])

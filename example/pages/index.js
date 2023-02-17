@@ -1,6 +1,6 @@
 import {
   useLayer,
-  useLayerWithMaxWidth,
+  useLayerWithSizeConstraints,
   LayerContextProvider,
 } from 'react-scroll-blocking-layers'
 
@@ -22,7 +22,7 @@ function Modal({ onClose, width = 800, children }) {
 function Content() {
   const [modal1Visible, setModal1Visible] = useLayer()
   const [modal2Visible, setModal2Visible] = useLayer()
-  const [modal3Visible, setModal3Visible] = useLayerWithMaxWidth(false, 800)
+  const [modal3Visible, setModal3Visible] = useLayerWithSizeConstraints(800)
 
   const isBlocked = modal1Visible || modal2Visible || modal3Visible
   return (

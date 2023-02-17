@@ -30,6 +30,7 @@ export default function LayerContextProvider({ children }) {
       value={{
         addLayer,
         removeLayer,
+        layerCount,
       }}>
       {children}
     </LayerContext.Provider>

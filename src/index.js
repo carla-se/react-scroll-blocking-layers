@@ -1,5 +1,11 @@
 import useLayer from './useLayer'
-import useLayerWithMaxWidth from './useLayerWithMaxWidth'
+import useLayerWithSizeConstraints from './useLayerWithMaxWidth'
+import useLayerCount from './useLayerCount'
 import LayerContextProvider from './LayerContextProvider'
 
-export { useLayer, useLayerWithMaxWidth, LayerContextProvider }
+export {
+  useLayer,
+  useLayerWithSizeConstraints,
+  useLayerCount,
+  LayerContextProvider,
+}

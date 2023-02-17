@@ -1,3 +1,4 @@
+// custom debounce since lodash.debounce weights almost 1kb minified and gzipped
 export default function debounce(func, timeout = 300) {
   let timer
   return (...args) => {

@@ -1,3 +1,4 @@
+// this is the most modern approach avoiding position: fixed and negative top values on body
 const scrollBlockingProperties = {
   touchAction: 'none',
   WebkitOverflowScrolling: 'none',

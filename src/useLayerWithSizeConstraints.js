@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 import useLayer from './useLayer'
 import debounce from './debounce'
 
-export default function useLayerWithMaxWidth(
-  defaultVisible = false,
+export default function useLayerWithSizeConstraints(
   maxWidth,
+  initialVisible = false,
   debounceTime = 150
 ) {
-  const [visible, setVisible] = useLayer(defaultVisible)
+  const [visible, setVisible] = useLayer(initialVisible)
 
   function setLayerVisible(isVisible) {
     if (isVisible && (!maxWidth || window.innerWidth <= maxWidth)) {
@@ -24,6 +24,7 @@ export default function useLayerWithMaxWidth(
     }
   }
 
+  // in case the layer is visible by default but the window size is out of our boundaries
   useEffect(hideLayerOnMaxWidth, [])
   useEffect(() => {
     if (visible && maxWidth !== undefined) {
