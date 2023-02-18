@@ -66,8 +66,8 @@ export default function Page() {
 
 ### useLayer
 
-This hook provides the basic mechanics of toggling a scroll blocking layer.
-The API interfcae is identical to React's useState. It takes an initial boolean visible state and returns an array with a pair of state and an updater
+This hook provides the basic mechanics of toggling a scroll blocking layer.<br />
+The API interface is identical to React's useState. It takes an initial boolean visible state and returns an array with a pair of state and an updater
 
 #### Parameters
 
@@ -131,7 +131,8 @@ function Info() {
 
 ### useLayerCount
 
-The last hook is only useful if you want information on how many layers are active. It takes no arguments and returns a single integer.
+The last hook is only useful if you want information on how many layers are active.<br />
+It takes no arguments and returns a single integer.
 
 #### Example
 
