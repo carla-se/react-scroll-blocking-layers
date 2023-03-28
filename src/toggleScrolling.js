@@ -1,24 +1,18 @@
-// this is the most modern approach avoiding position: fixed and negative top values on body
-const scrollBlockingProperties = {
-  touchAction: 'none',
-  WebkitOverflowScrolling: 'none',
-  overflow: 'hidden',
-  overscrollBehavior: 'none',
-}
+let scrollTop
 
 function blockScrolling(scrollElement) {
-  for (const property in scrollBlockingProperties) {
-    scrollElement.style.setProperty(
-      property,
-      scrollBlockingProperties[property]
-    )
-  }
+  scrollTop = window.pageYOffset
+
+  scrollElement.style.overflow = 'hidden'
+  scrollElement.style.position = 'fixed'
+  scrollElement.style.top = -scrollTop + 'px'
 }
 
 function enableScrolling(scrollElement) {
-  for (const property in scrollBlockingProperties) {
-    scrollElement.style.removeProperty(property)
-  }
+  scrollElement.style.removeProperty('position')
+  scrollElement.style.removeProperty('overflow')
+  scrollElement.style.removeProperty('top')
+  window.scrollTo(0, scrollTop)
 }
 
 export default function toggleScrolling(isBlocked) {

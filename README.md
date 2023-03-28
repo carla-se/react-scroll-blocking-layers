@@ -9,7 +9,7 @@ It's comparably small at only 1.4kb minified & gzipped.
 
 ## Background
 
-Overlays and Modals are very components that can be found in almost every modern web application However, implementing them in a user-friendly, accessible way is not at all straightforward.<br />
+Overlays and Modals are very common components that can be found in almost every modern web application However, implementing them in a user-friendly, accessible way is not at all straightforward.<br />
 When it comes to scrolling, most users expect to focus only on the actual layer, but the browser will still scroll the main scrolling element, usually the `body`, once the end of the layer content is reached.<br />
 To prevent that, we usually block that background scrolling as soon as an additional layer becomes visible. One might think a simple `overflow: hidden` might be enough here, but it turns out that it is not that simple.<br />
 There are a lot of solutions and packages out there that aim to block scrolling, but most of them either don't work in every environment or are too complex and too much overhead for modern browsers. That's why we built our own solution and eventually extracted it from our codebase to open source it.
