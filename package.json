@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-blocking-layers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Hooks for managing layers that block background scrolling in React",
   "author": "Carla Engineering <robin@carla.se>",
   "homepage": "https://github.com/carla-se/react-scroll-blocking-layers",
