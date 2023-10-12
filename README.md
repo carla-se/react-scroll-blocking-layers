@@ -14,7 +14,7 @@ When it comes to scrolling, most users expect to focus only on the actual layer,
 To prevent that, we usually block that background scrolling as soon as an additional layer becomes visible. One might think a simple `overflow: hidden` might be enough here, but it turns out that it is not that simple.<br />
 There are a lot of solutions and packages out there that aim to block scrolling, but most of them either don't work in every environment or are too complex and too much overhead for modern browsers. That's why we built our own solution and eventually extracted it from our codebase to open source it.
 
-> Check out [Robin Weser's blog post](https://weser.io/scroll-blocking-overlays) for a full deep-dive into the background and problems.
+> Check out [Robin Weser's blog post](https://weser.io/blog/scroll-blocking-overlays) for a full deep-dive into the background and problems.
 
 ## Example
 
