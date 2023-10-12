@@ -7,15 +7,17 @@ export default function useLayer(initialVisible = false) {
   const { addLayer, removeLayer } = useContext(LayerContext)
 
   function setLayerVisible(isVisible) {
-    if (isVisible !== visible) {
-      if (isVisible) {
-        addLayer()
-      } else {
-        removeLayer()
+    setVisible((visible) => {
+      if (isVisible !== visible) {
+        if (isVisible) {
+          addLayer()
+        } else {
+          removeLayer()
+        }
       }
 
-      setVisible(isVisible)
-    }
+      return isVisible
+    })
   }
 
   // layers that are visible by default need to be added to the layer context on initial render
