@@ -39,7 +39,7 @@ export default function LayerContextProvider({
   }
 
   function hasLayer(layer) {
-    return layers.find((id) => id === layer)
+    return layers.find((id) => id === layer) !== undefined
   }
 
   return (
