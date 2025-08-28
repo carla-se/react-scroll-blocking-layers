@@ -3,26 +3,43 @@ import React, { useState } from 'react'
 import LayerContext from './LayerContext'
 import toggleScrolling from './toggleScrolling'
 
-export default function LayerContextProvider({ children }) {
-  const [layerCount, setLayerCount] = useState(0)
+function update(newLayers, layer, callback) {
+  if (callback) {
+    callback(layer)
+  }
 
-  function updateLayerCount(getNextState) {
-    setLayerCount((prevLayerCount) => {
-      const nextLayerCount = getNextState(prevLayerCount)
+  // TODO: only toggle if block changes
+  toggleScrolling(newLayers.length > 0)
 
-      // TODO: only toggle if block changes
-      toggleScrolling(nextLayerCount > 0)
+  return newLayers
+}
 
-      return nextLayerCount
+export default function LayerContextProvider({
+  children,
+  onLayerAdded,
+  onLayerRemoved,
+}) {
+  const [layers, setLayers] = useState([])
+
+  function addLayer(layer) {
+    setLayers((prevLayers) => {
+      const filteredLayers = prevLayers.filter((id) => id !== layer)
+      const newLayers = [...filteredLayers, layer]
+
+      return update(newLayers, layer, onLayerAdded)
     })
   }
 
-  function addLayer() {
-    updateLayerCount((prevLayerCount) => prevLayerCount + 1)
+  function removeLayer(layer) {
+    setLayers((prevLayers) => {
+      const newLayers = prevLayers.filter((id) => id !== layer)
+
+      return update(newLayers, layer, onLayerRemoved)
+    })
   }
 
-  function removeLayer() {
-    updateLayerCount((prevLayerCount) => Math.max(0, prevLayerCount - 1))
+  function hasLayer(layer) {
+    return layers.find((id) => id === layer) !== undefined
   }
 
   return (
@@ -30,7 +47,9 @@ export default function LayerContextProvider({ children }) {
       value={{
         addLayer,
         removeLayer,
-        layerCount,
+        hasLayer,
+        layers,
+        layerCount: layers.length,
       }}>
       {children}
     </LayerContext.Provider>
